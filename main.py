@@ -21,7 +21,7 @@ async def image(image_path: str):
     if os.path.isfile(path) and float(image_path)+180>time.time():
         with open(path, "rb") as f:
             face=f.read()
-            os.remove(path)
+            # os.remove(path)
             return Response(content=face, media_type="image/png")
 @app.get("/upload")
 async def index(request: Request):
