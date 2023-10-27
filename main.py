@@ -18,7 +18,7 @@ async def index(request: Request):
 @app.get("/face/{image_path}")
 async def image(image_path: str):
     path="face/"+image_path+".png"
-    if os.path.isfile(path) and float(image_path)+45>time.time():
+    if os.path.isfile(path) and float(image_path)+180>time.time():
         with open(path, "rb") as f:
             face=f.read()
             os.remove(path)
